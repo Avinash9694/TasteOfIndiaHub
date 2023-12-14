@@ -1,0 +1,30 @@
+.blog-page {
+  .page-title {
+    color: red;
+    transform: translateX(40%);
+  }
+
+  .blog-posts {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    opacity: 0;
+    animation: getAnimationDuration(0.3s) slideInRight forwards;
+    @for $i from 2 through 7 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.1}s;
+      }
+    }
+    h2 {
+      font-size: 20px;
+      color: #333;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+    }
+  }
+}

@@ -1,5 +1,10 @@
 import React from "react";
-import { faHome, faList, faCog } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHome,
+  faList,
+  faBlog,
+  faInfoCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 
@@ -15,14 +20,19 @@ const Navbar = () => {
       icon: faHome,
     },
     {
-      name: "Recipes",
+      name: "Favourite-Recipes",
       path: "/recipes",
       icon: faList,
     },
     {
-      name: "Settings",
-      path: "/settings",
-      icon: faCog,
+      name: "Blog",
+      path: "/blog",
+      icon: faBlog,
+    },
+    {
+      name: "About",
+      path: "/about",
+      icon: faInfoCircle,
     },
   ];
 
