@@ -10,6 +10,7 @@
   width: 100%;
   top: 0;
   z-index: 998;
+
   .logo {
     font-size: 1.2em;
     font-weight: bolder;
@@ -131,4 +132,15 @@
       margin-right: 0.5em;
     }
   }
+}
+.light-theme {
+  background-color: var(--background-color-light);
+  --background-color: var(--background-color-light);
+  --text-color: var(--text-color-light);
+}
+
+.dark-theme {
+  background-color: var(--background-color-dark);
+  --background-color: var(--background-color-dark);
+  --text-color: var(--text-color-dark);
 }
