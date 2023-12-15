@@ -1,21 +1,25 @@
 import React from "react";
-
-const CheffCard = ({ cheffs }) => {
+import { Link } from "react-router-dom";
+const CheffCard = ({ cheff }) => {
   return (
     <div className="chief-card">
-      <img src={cheffs.img} alt="" />
+      <img src={cheff.img} alt="" />
       <div className="chief-card-info">
-        <h3 className="chief-card-name">{cheffs.name}</h3>
+        <h3 className="chief-card-name">{cheff.name}</h3>
         <p className="chief-recipe-count">
-          Recipes: <b>{cheffs.recipesCount}</b>
+          Recipes: <b>{cheff.recipesCount}</b>
         </p>
         <p className="chief-YOE">
-          Years of experience: <b>{cheffs.yoe}</b>
+          Years of experience: <b>{cheff.yoe}</b>
         </p>
         <p className="chief-likes">
-          Likes: <b>{cheffs.likes}</b>
+          Likes: <b>{cheff.likes}</b>
         </p>
-        <button className="chief-recipe-btn">Recipe</button>
+        <Link to={`/chef/${cheff.name.split(" ")[0]}/recipes`}>
+          <button value={cheff} className="chief-recipe-btn">
+            {cheff.viewRecipesButton}
+          </button>
+        </Link>
       </div>
     </div>
   );
