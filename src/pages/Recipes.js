@@ -1,39 +1,50 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 const Recipes = () => {
-  const searches = [
-    "Biryani",
-    "Butter Paneer",
-    "Chicken Tikka",
-    "Paratha",
-    "Idli",
-    "Dhokla",
-    "Rogan-josh",
-    "Vada Pav",
-    "Samosa",
-  ];
+  const favoriteRecipes =
+    JSON.parse(localStorage.getItem("favoriteRecipes")) || [];
+
+  const handleRemoveClick = (recipeName) => {
+    // Remove the recipe from Local Storage
+    const updatedFavorites = favoriteRecipes.filter(
+      (fav) => fav.recipeName !== recipeName
+    );
+    localStorage.setItem("favoriteRecipes", JSON.stringify(updatedFavorites));
+    // Force component re-render to update the UI
+    window.location.reload();
+  };
+
   return (
     <div>
-      <div className="previous-searches section">
-        <h2>Previous Searches</h2>
-        <div className="previous-searches-container">
-          {searches.map((search, index) => (
-            <div
-              key={index}
-              style={{ animationDelay: index * 0.1 + "s" }}
-              className="search-item"
-            >
-              {search}
-            </div>
-          ))}
-        </div>
-        <div className="search-box">
-          <input type="text" placeholder="search"></input>
-          <button className="btn">
-            <FontAwesomeIcon icon={faSearch} />
-          </button>
-        </div>
+      <div className="ma-fav-recipe">
+        <h2>My Favorite Recipes</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Recipe Picture</th>
+              <th>Chef Name</th>
+              <th>Recipe Name</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            {favoriteRecipes.map((recipe) => (
+              <tr key={recipe.recipeName}>
+                {/* Add recipe picture, chef name, recipe name */}
+                <td>
+                  <img src={recipe.img} alt="{recipe.name}" />
+                </td>
+                <td>{recipe.name}</td>
+                <td>{recipe.recipeName}</td>
+                <td>
+                  <button onClick={() => handleRemoveClick(recipe.recipeName)}>
+                    Remove
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

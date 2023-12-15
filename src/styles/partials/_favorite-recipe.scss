@@ -1,0 +1,45 @@
+.ma-fav-recipe {
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+      font-weight: 800;
+      font-size: large;
+      color: #c62828;
+
+      img {
+        max-width: 100px;
+        border-radius: 5px;
+      }
+
+      button {
+        background-color: #e53935;
+        color: #fff;
+        padding: 8px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #c62828;
+        }
+      }
+    }
+
+    th {
+      background-color: #4caf50;
+      color: #fff;
+    }
+  }
+}

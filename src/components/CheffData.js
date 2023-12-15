@@ -11,6 +11,7 @@ const cheffs = [
       {
         recipeName: "Paneer Tikka",
         ingredients: ["Paneer", "Yogurt", "Spices", "Bell Peppers", "Onion"],
+        img: "/img/recipes/paneerTikka.jpg",
         cookingMethod:
           "1. Marinate paneer in yogurt and spices. 2. Grill with bell peppers and onion. 3. Serve hot.",
         rating: 4.9,
@@ -19,6 +20,7 @@ const cheffs = [
       {
         recipeName: "Chole Bhature",
         ingredients: ["Chickpeas", "Flour", "Yogurt", "Spices", "Oil"],
+        img: "/img/recipes/chole-bhature.jpg",
         cookingMethod:
           "1. Cook chickpeas with spices. 2. Make fluffy bhature. 3. Serve with yogurt.",
         rating: 4.7,
@@ -27,6 +29,7 @@ const cheffs = [
       {
         recipeName: "Mutton Rogan Josh",
         ingredients: ["Mutton", "Yogurt", "Spices", "Onion", "Tomatoes"],
+        img: "/img/recipes/mutton-rogan-josh.jpg",
         cookingMethod:
           "1. Cook mutton with yogurt, spices, onion, and tomatoes. 2. Simmer until tender. 3. Serve with rice.",
         rating: 4.8,
@@ -52,6 +55,7 @@ const cheffs = [
           "Lemon",
           "Ginger-Garlic Paste",
         ],
+        img: "/img/recipes/Tandoori-Chicken.jpg",
         cookingMethod:
           "1. Marinate chicken in yogurt and spices. 2. Grill until charred. 3. Serve with mint chutney.",
         rating: 4.9,
@@ -66,6 +70,7 @@ const cheffs = [
           "Ghee",
           "Curd",
         ],
+        img: "/img/recipes/aloo-paratha.jpg",
         cookingMethod:
           "1. Make dough with flour. 2. Stuff with spiced potatoes. 3. Cook with ghee. 4. Serve with curd.",
         rating: 4.7,
@@ -74,6 +79,7 @@ const cheffs = [
       {
         recipeName: "Paneer Butter Masala",
         ingredients: ["Paneer", "Tomatoes", "Cream", "Spices", "Kasuri Methi"],
+        img: "/img/recipes/paneer-butter-masala.jpg",
         cookingMethod:
           "1. Cook paneer in tomato cream sauce with spices. 2. Garnish with kasuri methi. 3. Serve with naan.",
         rating: 4.8,
@@ -93,6 +99,7 @@ const cheffs = [
       {
         recipeName: "Butter Chicken",
         ingredients: ["Chicken", "Butter", "Tomato Sauce", "Cream", "Spices"],
+        img: "/img/recipes/butter-chicken.jpg",
         cookingMethod:
           "1. Marinate chicken. 2. Cook chicken in tomato sauce. 3. Add cream and spices. 4. Serve hot.",
         rating: 4.8,
@@ -101,6 +108,7 @@ const cheffs = [
       {
         recipeName: "Palak Paneer",
         ingredients: ["Paneer", "Spinach", "Onion", "Tomatoes", "Spices"],
+        img: "/img/recipes/palak-paneer.jpg",
         cookingMethod:
           "1. Cook paneer in spinach gravy. 2. Add onion, tomatoes, and spices. 3. Serve with rice or bread.",
         rating: 4.7,
@@ -109,6 +117,7 @@ const cheffs = [
       {
         recipeName: "Biryani",
         ingredients: ["Basmati Rice", "Chicken", "Spices", "Onion", "Yogurt"],
+        img: "/img/recipes/Chicken-Biryani.jpg",
         cookingMethod:
           "1. Marinate chicken. 2. Layer rice and chicken. 3. Cook with spices and yogurt. 4. Garnish and serve.",
         rating: 4.9,
@@ -134,6 +143,7 @@ const cheffs = [
           "Ghee",
           "Cashews",
         ],
+        img: "/img/recipes/pulao.jpg",
         cookingMethod:
           "1. Cook basmati rice with mixed vegetables and spices. 2. Garnish with ghee and cashews. 3. Serve hot.",
         rating: 4.8,
@@ -142,6 +152,7 @@ const cheffs = [
       {
         recipeName: "Chole Bhature",
         ingredients: ["Chickpeas", "Maida Flour", "Yogurt", "Spices", "Oil"],
+        img: "/img/recipes/chole-bhature.jpg",
         cookingMethod:
           "1. Cook chickpeas in spiced gravy. 2. Serve with deep-fried bread (bhature) and yogurt.",
         rating: 4.9,
@@ -150,6 +161,7 @@ const cheffs = [
       {
         recipeName: "Gulab Jamun",
         ingredients: ["Milk Powder", "Milk", "Sugar", "Cardamom", "Ghee"],
+        img: "/img/recipes/gulab-jamun.jpg",
         cookingMethod:
           "1. Make dough with milk powder and milk. 2. Fry and soak in sugar syrup. 3. Serve warm.",
         rating: 4.8,
@@ -169,6 +181,7 @@ const cheffs = [
       {
         recipeName: "Tandoori Roti",
         ingredients: ["Whole Wheat Flour", "Water", "Salt", "Ghee"],
+        img: "/img/recipes/tandoori-roti.jpg",
         cookingMethod:
           "1. Make dough with flour, water, and salt. 2. Cook on a hot griddle with ghee. 3. Serve hot.",
         rating: 4.7,
@@ -177,6 +190,7 @@ const cheffs = [
       {
         recipeName: "Fish Curry",
         ingredients: ["Fish", "Onion", "Tomatoes", "Spices", "Coconut Milk"],
+        img: "/img/recipes/fish-curry.jpg",
         cookingMethod:
           "1. Cook fish in onion tomato gravy with spices and coconut milk. 2. Serve with rice.",
         rating: 4.8,
@@ -191,6 +205,7 @@ const cheffs = [
           "Spices",
           "Garam Masala",
         ],
+        img: "/img/recipes/rajma-chawal.jpg",
         cookingMethod:
           "1. Cook kidney beans in onion tomato gravy with spices and garam masala. 2. Serve with rice.",
         rating: 4.9,
@@ -216,6 +231,7 @@ const cheffs = [
           "Tomatoes",
           "Cream",
         ],
+        img: "/img/recipes/Dal-Makhani.jpg",
         cookingMethod:
           "1. Cook lentils and kidney beans with spices and tomatoes. 2. Add cream. 3. Serve with rice or naan.",
         rating: 4.8,
@@ -224,6 +240,7 @@ const cheffs = [
       {
         recipeName: "Pav Bhaji",
         ingredients: ["Mixed Vegetables", "Butter", "Spices", "Buns", "Onion"],
+        img: "/img/recipes/pav-bhaji.jpg",
         cookingMethod:
           "1. Cook mixed vegetables with spices. 2. Serve with buttered buns and chopped onion.",
         rating: 4.7,
@@ -232,6 +249,7 @@ const cheffs = [
       {
         recipeName: "Rasgulla",
         ingredients: ["Milk", "Sugar", "Cardamom", "Rose Water"],
+        img: "/img/recipes/Rasgulla.jpg",
         cookingMethod:
           "1. Make paneer balls, boil in sugar syrup. 2. Flavor with cardamom and rose water. 3. Serve chilled.",
         rating: 4.9,

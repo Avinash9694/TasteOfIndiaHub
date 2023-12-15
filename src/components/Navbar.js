@@ -20,7 +20,7 @@ const Navbar = () => {
       icon: faHome,
     },
     {
-      name: "Favourite-Recipes",
+      name: "Favorite-Recipes",
       path: "/recipes",
       icon: faList,
     },

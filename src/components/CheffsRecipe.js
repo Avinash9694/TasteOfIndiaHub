@@ -19,7 +19,10 @@ const CheffsRecipe = () => {
         <h2>{selectedChef.name}'s Recipes</h2>
         <div>
           {selectedChef.recipes.map((recipe, index) => (
-            <RecipeCard key={index} recipe={recipe} />
+            <RecipeCard
+              key={index}
+              recipe={{ ...recipe, name: selectedChef.name }}
+            />
           ))}
         </div>
       </div>

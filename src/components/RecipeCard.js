@@ -9,14 +9,30 @@ const RecipeCard = ({ recipe }) => {
     // Check if the recipe is already marked as a favorite
     if (isFavorite) {
       toast.info("Recipe removed from favorites");
+      removeFavoriteRecipe(recipe.recipeName);
     } else {
       toast.success("Recipe added to favorites");
+      addFavoriteRecipe(recipe);
     }
 
     // Toggle the favorite state
     setIsFavorite(!isFavorite);
   };
+  const addFavoriteRecipe = (recipe) => {
+    const favorites = JSON.parse(localStorage.getItem("favoriteRecipes")) || [];
+    localStorage.setItem(
+      "favoriteRecipes",
+      JSON.stringify([...favorites, recipe])
+    );
+  };
 
+  const removeFavoriteRecipe = (recipeName) => {
+    const favorites = JSON.parse(localStorage.getItem("favoriteRecipes")) || [];
+    const updatedFavorites = favorites.filter(
+      (fav) => fav.recipeName !== recipeName
+    );
+    localStorage.setItem("favoriteRecipes", JSON.stringify(updatedFavorites));
+  };
   return (
     <div className="recipe-card">
       <h3>{recipe.recipeName}</h3>
