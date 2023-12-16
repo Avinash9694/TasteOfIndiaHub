@@ -9,8 +9,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
 
-const Navbar = () => {
+const Navbar = ({ currname, pr }) => {
   // function to toggle theme
   const toggleTheme = () => {
     const root = document.documentElement;
@@ -33,6 +35,8 @@ const Navbar = () => {
 
   const [showSidebar, setShowSidebar] = useState(false);
   const location = useLocation();
+  const isLoginPage = location.pathname === "/login";
+  const isRegisterPage = location.pathname === "/register";
   const links = [
     {
       name: "Home",
@@ -59,13 +63,22 @@ const Navbar = () => {
   function closeSidebar() {
     setShowSidebar(false);
   }
+  function LogOut() {
+    signOut(auth)
+      .then(() => {
+        console.log("Log out successfully !!!");
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
   return (
     <>
       <div className="navbar container">
-        <FontAwesomeIcon onClick={toggleTheme} icon={faAdjust} />
-        <a href="#!" className="logo">
+        <Link to="/" className="logo">
           Taste<span> of </span> India Hub
-        </a>
+        </Link>
 
         <div className="nav-links">
           {links.map((link) => (
@@ -78,6 +91,28 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
+
+        <FontAwesomeIcon onClick={toggleTheme} icon={faAdjust} />
+
+        {currname ? (
+          <div>
+            <button onClick={LogOut}>Logout</button>
+
+            <img
+              style={{ width: "30px", height: "30px", objectFit: "cover" }}
+              src={pr}
+              title={currname}
+              alt={`${currname}'s DP`}
+            />
+          </div>
+        ) : isLoginPage || isRegisterPage ? (
+          <div></div>
+        ) : (
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
+        )}
+
         <div
           onClick={() => setShowSidebar(!showSidebar)}
           className={showSidebar ? "sidebar-btn active" : "sidebar-btn"}
