@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const CheffCard = ({ cheff }) => {
+  console.log(cheff);
   return (
     <div className="chief-card">
       <img src={cheff.img} alt="" />
@@ -15,7 +16,7 @@ const CheffCard = ({ cheff }) => {
         <p className="chief-likes">
           Likes: <b>{cheff.likes}</b>
         </p>
-        <Link to={`/chef/${cheff.name.split(" ")[0]}/recipes`}>
+        <Link to={`/chef/${cheff.id}/recipes`}>
           <button value={cheff} className="chief-recipe-btn">
             {cheff.viewRecipesButton}
           </button>

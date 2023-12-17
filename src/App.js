@@ -42,7 +42,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login currname={userName} />} />
           <Route path="/register" element={<Register currname={userName} />} />
-          <Route path="/chef/:name/recipes" element={<CheffsRecipe />} />
+          <Route path="/chef/:id1/recipes" element={<CheffsRecipe />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

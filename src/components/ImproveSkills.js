@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const ImproveSkills = () => {
   const list = [
     "Learn new recepies",
@@ -21,7 +21,9 @@ const ImproveSkills = () => {
             {item}
           </p>
         ))}
-        <button className="btn">signup now</button>
+        <Link to="/register">
+          <button className="btn">signup now</button>
+        </Link>
       </div>
     </div>
   );
