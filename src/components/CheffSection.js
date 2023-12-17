@@ -1,7 +1,7 @@
 import React from "react";
 import CheffCard from "./CheffCard";
-import cheffs from "./CheffData";
-const CheffSection = () => {
+
+const CheffSection = ({ cheffs }) => {
   return (
     <div className="section chiefs">
       <h1 className="title">Top cheffs</h1>
