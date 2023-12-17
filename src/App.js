@@ -1,8 +1,10 @@
+// Importing necessary modules and components from React and external libraries
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// Importing components for different pages and functionalities
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Navbar from "./components/Navbar";
@@ -12,14 +14,21 @@ import Recipes from "./pages/Recipes";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
 import CheffsRecipe from "./components/CheffsRecipe";
+import UserDetails from "./components/UserDetails";
 import NotFound from "./components/Notfound";
 
+// Importing authentication instance from Firebase
 import { auth } from "./firebase";
+
+// App component definition
 function App() {
+  // State variables for user information
   const [userName, setUserName] = useState("");
   const [profilePic, setProfilePic] = useState(
     "https://i.pinimg.com/originals/c0/c2/16/c0c216b3743c6cb9fd67ab7df6b2c330.jpg"
   );
+
+  // Effect to update user information based on authentication state changes
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -43,6 +52,7 @@ function App() {
           <Route path="/login" element={<Login currname={userName} />} />
           <Route path="/register" element={<Register currname={userName} />} />
           <Route path="/chef/:id1/recipes" element={<CheffsRecipe />} />
+          <Route path="/user-details" element={<UserDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

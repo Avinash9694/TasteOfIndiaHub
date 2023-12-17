@@ -1,9 +1,11 @@
 import React from "react";
 
 const Recipes = () => {
+  // Retrieve favorite recipes from Local Storage, default to an empty array if null
   const favoriteRecipes =
     JSON.parse(localStorage.getItem("favoriteRecipes")) || [];
 
+  // Function to handle the removal of a favorite recipe
   const handleRemoveClick = (recipeName) => {
     // Remove the recipe from Local Storage
     const updatedFavorites = favoriteRecipes.filter(
@@ -29,7 +31,7 @@ const Recipes = () => {
           </thead>
           <tbody>
             {favoriteRecipes.map((recipe) => (
-              <tr key={recipe.recipeName}>
+              <tr key={recipe.img}>
                 {/* Add recipe picture, chef name, recipe name */}
                 <td>
                   <img src={recipe.img} alt="{recipe.name}" />

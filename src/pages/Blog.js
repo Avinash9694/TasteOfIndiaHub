@@ -1,6 +1,7 @@
 import React from "react";
 
 const Blog = () => {
+  // Array of blog posts with each post containing an id, title, and content
   const posts = [
     {
       id: 1,

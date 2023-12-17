@@ -10,28 +10,36 @@ import {
 } from "firebase/auth";
 import { app } from "../firebase";
 
+// Register component handles user registration and authentication
 const Register = ({ currname }) => {
+  // Google and GitHub authentication providers
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
+  // React Router hook for navigation
   const navigate = useNavigate();
+
+  // State variables for user registration form
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [photoURL, setPhotoURL] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
+  // Authentication object
   const auth = getAuth(app);
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
+    // Validate password length
     if (password.length < 6) {
       setPasswordError("Password must be at least 6 characters long");
       return;
     }
 
     try {
+      // Create user with email and password
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -43,6 +51,8 @@ const Register = ({ currname }) => {
         displayName: name,
         photoURL: photoURL,
       });
+
+      // Navigate to the home page
       navigate("/");
     } catch (error) {
       console.error("Registration failed", error.message);
@@ -52,6 +62,7 @@ const Register = ({ currname }) => {
 
   const handleGoogleSignIn = async () => {
     try {
+      // Sign in with Google using provider
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
 
@@ -67,6 +78,7 @@ const Register = ({ currname }) => {
     }
   };
 
+  // Function to handle GitHub sign-in
   const handleGitHubSignIn = async () => {
     try {
       const result = await signInWithPopup(auth, githubProvider);
@@ -84,6 +96,7 @@ const Register = ({ currname }) => {
     }
   };
 
+  // If user is already logged in, show a message
   if (currname) {
     return <h2>User already login. Please return to home page</h2>;
   }

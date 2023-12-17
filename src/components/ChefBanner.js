@@ -1,5 +1,5 @@
 import React from "react";
-
+//Chef banner has data of each chef to display in the Chef section in home page.
 const ChefBanner = ({ chef }) => {
   return (
     <div className="chief-banner">

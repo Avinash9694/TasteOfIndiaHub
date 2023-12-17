@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CustomImage from "./Customimage";
-
+//Hero section for the home page to which tells about the website
 const HeroSection = () => {
   const images = [
     "img/gallery/img_1.jpg",

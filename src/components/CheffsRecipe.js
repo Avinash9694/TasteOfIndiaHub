@@ -2,31 +2,42 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ChefBanner from "./ChefBanner";
 import RecipeCard from "./RecipeCard";
+import Spinner from "./Spinner";
 
 const CheffsRecipe = () => {
   const { id1 } = useParams();
-  console.log(id1);
+  //using useState hook for managing state of each chef
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/chef/${id1}`);
+      //fetching data using the provided API endpoint and passing in the user's ID as a parameter.
+      const response = await fetch(
+        `https://taste-of-india-hub-server.vercel.app/chef/${id1}`
+      );
       const jsonData = await response.json();
-      console.log(jsonData);
+
       setData(jsonData);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
 
+  //using useEffect hook to handle side effects
   useEffect(() => {
+    // calling fetch data function
     fetchData();
-  }, [id1]);
+  }, [id1]); //dependency is id of each chef
 
   const selectedChef = data.find((c) => c.id === id1);
 
+  //handling condition when there is no chef
   if (!selectedChef) {
-    return <div>Chef not found</div>;
+    return (
+      <div>
+        <Spinner />
+      </div>
+    );
   }
 
   return (

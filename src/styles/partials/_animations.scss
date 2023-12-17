@@ -1,23 +1,29 @@
 @keyframes slideInLeft {
+  /* Initial state: translated 100% to the left */
   from {
     transform: translateX(-100%);
   }
+  /* Final state: no translation (0%) */
   to {
     transform: translateX(0);
   }
 }
 
+/* Keyframes for popping in with scale and opacity */
 @keyframes popOut {
+  /* Initial state: scaled to 0 and fully transparent */
   from {
     transform: scale(0);
     opacity: 0;
   }
+  /* Final state: normal scale (1) and fully opaque */
   to {
     transform: scale(1);
     opacity: 1;
   }
 }
 
+/* Keyframes for sliding in from the right with opacity transition */
 @keyframes slideInRight {
   from {
     transform: translateX(100%);

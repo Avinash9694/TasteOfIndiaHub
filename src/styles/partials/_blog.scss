@@ -1,3 +1,4 @@
+//blog page css
 .blog-page {
   .page-title {
     color: red;
@@ -12,7 +13,7 @@
     transform: translateX(100%);
     opacity: 0;
     animation: getAnimationDuration(0.3s) slideInRight forwards;
-    @for $i from 2 through 7 {
+    @for $i from 2 through 6 {
       &:nth-child(#{$i}) {
         animation-delay: #{$i * 0.1}s;
       }

@@ -11,33 +11,45 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { auth } from "../firebase";
 
+// Login component for user authentication
 const Login = ({ currname }) => {
+  // Initialize Google and GitHub authentication providers
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
+  // React Router hook for navigation
   const navigate = useNavigate();
+
+  // State variables for email, password, and error message
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Function to handle standard email/password login
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
+      // Attempt to sign in with email and password
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
     } catch (error) {
+      // Set error message for unsuccessful login
       console.error("Login failed", error.message);
       setErrorMessage("Either email or password is incorrect");
       // Handle error (show error message to the user)
     }
   };
+
+  // If user is already logged in, display a message
   if (currname) {
     return <h2>User already login. Please return to home page</h2>;
   }
 
+  // Function to handle Google sign-in
   const handleGoogleSignIn = async () => {
     try {
+      // Sign in with Google provider
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
 
@@ -46,15 +58,17 @@ const Login = ({ currname }) => {
         displayName: user.displayName,
       });
 
-      // Handle user data as needed
+      // Navigate to the home page on successful sign-in
       navigate("/");
     } catch (error) {
       console.error("Google sign-in failed", error.message);
     }
   };
 
+  // Function to handle GitHub sign-in
   const handleGitHubSignIn = async () => {
     try {
+      // Sign in with GitHub provider
       const result = await signInWithPopup(auth, githubProvider);
       const user = result.user;
 
@@ -63,7 +77,7 @@ const Login = ({ currname }) => {
         displayName: user.displayName,
       });
 
-      // Handle user data as needed
+      // Navigate to the home page on successful sign-in
       navigate("/");
     } catch (error) {
       console.error("GitHub sign-in failed", error.message);

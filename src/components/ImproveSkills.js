@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// improve skill is static section in the landing page
 const ImproveSkills = () => {
   const list = [
     "Learn new recepies",

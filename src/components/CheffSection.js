@@ -1,6 +1,6 @@
 import React from "react";
 import CheffCard from "./CheffCard";
-
+//Section to display 6 chef's data
 const CheffSection = ({ cheffs }) => {
   return (
     <div className="section chiefs">

@@ -1,7 +1,9 @@
 import React from "react";
 
 const About = () => {
+  // Render the About component
   return (
+    // Container for the About section with a CSS class 'about'
     <div className="about">
       <img src="/img/gallery/taste.png" alt="tasteofindia" />
       <div>

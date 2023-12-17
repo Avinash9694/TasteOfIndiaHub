@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 
+//section to quotes from famous chef's
 const QuoteSection = () => {
   return (
     <div className="section quote">

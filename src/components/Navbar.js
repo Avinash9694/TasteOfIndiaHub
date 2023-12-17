@@ -7,13 +7,17 @@ import {
   faInfoCircle,
   faAdjust,
 } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 
 const Navbar = ({ currname, pr }) => {
-  // function to toggle theme
+  // React Router hook for navigation
+  const navigate = useNavigate();
+
+  // Function to toggle between light and dark themes
   const toggleTheme = () => {
     const root = document.documentElement;
     const currentTheme = root.classList.contains("dark-theme")
@@ -37,6 +41,8 @@ const Navbar = ({ currname, pr }) => {
   const location = useLocation();
   const isLoginPage = location.pathname === "/login";
   const isRegisterPage = location.pathname === "/register";
+
+  // Array of navigation links
   const links = [
     {
       name: "Home",
@@ -60,17 +66,19 @@ const Navbar = ({ currname, pr }) => {
     },
   ];
 
+  // Function to close the sidebar
   function closeSidebar() {
     setShowSidebar(false);
   }
+
+  // Function to handle user logout
   function LogOut() {
     signOut(auth)
       .then(() => {
-        console.log("Log out successfully !!!");
-        window.location.reload();
+        navigate("/");
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   }
   return (
@@ -96,20 +104,23 @@ const Navbar = ({ currname, pr }) => {
 
         {currname ? (
           <div>
-            <button onClick={LogOut}>Logout</button>
-
-            <img
-              style={{ width: "30px", height: "30px", objectFit: "cover" }}
-              src={pr}
-              title={currname}
-              alt={`${currname}'s DP`}
-            />
+            <Link to="/user-details">
+              <img
+                style={{ width: "25px", height: "25px", objectFit: "cover" }}
+                src={pr}
+                title={currname}
+                alt={`${currname}'s DP`}
+              />
+            </Link>
+            <button style={{ display: "flex" }} onClick={LogOut}>
+              Logout
+            </button>
           </div>
         ) : isLoginPage || isRegisterPage ? (
           <div></div>
         ) : (
           <Link to="/login">
-            <button>Login</button>
+            <button>Login/Register</button>
           </Link>
         )}
 

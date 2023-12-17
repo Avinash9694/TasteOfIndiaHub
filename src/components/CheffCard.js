@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+//Chef card has all the information about each chef to display in chef's recipe page
 const CheffCard = ({ cheff }) => {
-  console.log(cheff);
   return (
     <div className="chief-card">
       <img src={cheff.img} alt="" />
