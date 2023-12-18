@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="footer container">
       <div className="footer-section">
-        <p className="title">FoodiesHub.com</p>
+        <p className="title">TasteOfIndiaHub.com</p>
         <p>
           Taste of India Hub is a place where you can please your soul and tummy
           with delicious food recepies of all cuisine.
