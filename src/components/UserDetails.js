@@ -74,7 +74,6 @@ const UserDetails = () => {
       position: toast.POSITION.TOP_CENTER,
       autoClose: 2000,
     });
-
     navigate("/");
   };
 

@@ -91,6 +91,7 @@ const Login = ({ currname }) => {
           Email:
           <input
             type="email"
+            id="emails"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -100,6 +101,7 @@ const Login = ({ currname }) => {
           Password:
           <input
             type="password"
+            id="passwords"
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);

@@ -19,7 +19,8 @@ import NotFound from "./components/Notfound";
 
 // Importing authentication instance from Firebase
 import { auth } from "./firebase";
-
+import dotenv from "dotenv";
+dotenv.config();
 // App component definition
 function App() {
   // State variables for user information

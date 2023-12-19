@@ -36,7 +36,7 @@ const Blog = () => {
   ];
   return (
     <div>
-      <div className="blog-page">
+      <div style={{ height: "80vw" }} className="blog-page">
         <h1 className="page-title">Chef's Blog</h1>
         <div>
           {posts.map((post) => (

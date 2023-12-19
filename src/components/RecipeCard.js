@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
 
 // RecipeCard component displays information about a recipe and allows marking as favorite
@@ -12,11 +13,15 @@ const RecipeCard = ({ recipe }) => {
     // Check if the recipe is already marked as a favorite
     if (isFavorite) {
       // Notify user and remove the recipe from favorites
-      toast.info("Recipe removed from favorites");
+      toast.info("Recipe removed from favorites", {
+        autoClose: 1000,
+      });
       removeFavoriteRecipe(recipe.recipeName);
     } else {
       // Notify user and add the recipe to favorites
-      toast.success("Recipe added to favorites");
+      toast.success("Recipe added to favorites", {
+        autoClose: 1000,
+      });
       addFavoriteRecipe(recipe);
     }
 

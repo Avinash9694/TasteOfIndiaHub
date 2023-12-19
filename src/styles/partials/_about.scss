@@ -1,19 +1,15 @@
 //css for about page
 .about {
-  display: flex;
-  height: 300px;
-  padding-left: 20%;
-  align-items: center;
-  background-color: #d8cfcf;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  img {
-    height: 50%;
-  }
+  height: 80vw;
+
   h1 {
     color: red;
   }
-  h2 {
-    padding-left: 10px;
-    width: 70%;
-  }
+}
+.div1 {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #d8cfcf;
+  align-items: center;
 }

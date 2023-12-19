@@ -107,6 +107,7 @@ const Register = ({ currname }) => {
           Name:
           <input
             type="text"
+            id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -116,6 +117,7 @@ const Register = ({ currname }) => {
           Email:
           <input
             type="email"
+            id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -125,6 +127,7 @@ const Register = ({ currname }) => {
           Password:
           <input
             type="password"
+            id="password"
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
@@ -138,6 +141,7 @@ const Register = ({ currname }) => {
           Photo URL:
           <input
             type="url"
+            id="photoUrl"
             value={photoURL}
             onChange={(e) => setPhotoURL(e.target.value)}
           />
