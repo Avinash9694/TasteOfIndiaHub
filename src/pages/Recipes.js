@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 const Recipes = () => {
+  const navigate = useNavigate();
   // Retrieve favorite recipes from Local Storage, default to an empty array if null
   const favoriteRecipes =
     JSON.parse(localStorage.getItem("favoriteRecipes")) || [];
@@ -13,7 +14,7 @@ const Recipes = () => {
     );
     localStorage.setItem("favoriteRecipes", JSON.stringify(updatedFavorites));
     // Force component re-render to update the UI
-    window.location.reload();
+    navigate("/recipes");
   };
 
   return (
