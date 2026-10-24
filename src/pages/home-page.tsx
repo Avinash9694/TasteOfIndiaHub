@@ -47,7 +47,7 @@ export function HomePage() {
   return (
     <>
       <section className="container-x grid items-center gap-10 py-10 lg:grid-cols-[1.05fr_1fr] lg:py-20">
-        <div className="animate-fade-up">
+        <div>
           <p className="text-accent-strong mb-4 font-mono text-xs tracking-[0.18em] uppercase">
             Indian recipes, written for home kitchens
           </p>
