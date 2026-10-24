@@ -1,0 +1,9 @@
+node_modules
+dist
+coverage
+.env
+.env.local
+*.local
+.DS_Store
+# Full-size source photos; `npm run images` emits the webp assets under public/img
+image-src/

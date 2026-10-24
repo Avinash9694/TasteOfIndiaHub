@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taste of India Hub — Indian recipes from chefs you know</title>
+    <meta
+      name="description"
+      content="Browse Indian recipes from celebrated chefs, filter by region, diet and difficulty, and save your favourites. Built with React, TypeScript and Vite."
+    />
+    <meta name="theme-color" content="#d9701e" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Taste of India Hub" />
+    <meta
+      property="og:description"
+      content="Indian recipes from celebrated chefs, with searchable filters, step-by-step cooking and saved favourites."
+    />
+    <meta property="og:url" content="https://avinash9694.github.io/TasteOfIndiaHub/" />
+    <meta property="og:image" content="https://avinash9694.github.io/TasteOfIndiaHub/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/TasteOfIndiaHub/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500;9..144,600;9..144,700,50&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('toih:theme');
+          var dark =
+            stored === 'dark' ||
+            (stored !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
